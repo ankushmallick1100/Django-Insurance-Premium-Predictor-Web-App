@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}IPP - SignUp{% endblock title %}
+
+{% block body %}
+<section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-1">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">SignUp</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please signup to access this website</p>
+        </div>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap flex-col -m-2">
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="username" class="leading-7 text-sm text-gray-600">Username</label>
+                            <input type="text" id="username" name="username"
+                                class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
+                            <input type="password" id="password" name="password"
+                                class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-ou">
+                        </div>
+                    </div>
+
+                    <div class="p-1 w-full">
+                        <button
+                            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">SignUp</button>
+                    </div>
+                </div>
+
+                <div class="w-full text-center">
+                    <p class="leading-normal my-5">If already registered, then please <a class="text-indigo-500"
+                            href="{% url 'login' %}">Login</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock body %}

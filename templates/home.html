@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}IPP - Home{% endblock title %}
+
+{% block body %}
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Insurance Premium Predictor</h1>
+            <p class="mb-8 leading-relaxed lg:text-left">An insurance premium predictor is a model or tool designed to forecast the premium (cost of insurance) for an individual or entity based on specific variables or risk factors. Insurance companies often use predictive models to assess risk levels and set premiums accordingly, aiming to price policies fairly and profitably.</p>
+        </div>
+
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" alt="hero" src="{% static 'images/image.jpg' %}">
+        </div>
+    </div>
+</section>
+
+<br><br>
+<hr>
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">Key Elements of an
+            <br class="hidden sm:block">Insurance Premium Predictor
+        </h1>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Shooting Stars</h2>
+                    <p class="leading-relaxed text-base">Predictive models use six machine learning techniques to analyze historical data and identify patterns. Algorithms often used in insurance include: Linear Regression, Hist Gradient Boosting Regressor, Random Forest Regressor, Decision Tree Regressor, Gradient Boosting Regressor, and Voting Regressor.</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                    </svg>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Data Collection and Preprocessing</h2>
+                    <p class="leading-relaxed text-base">Insurance companies gather historical data on past customers, claims, and premiums paid. They then clean and prepare this data, which may include normalizing values, handling missing information, or encoding categorical variables.</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex">
+                <div
+                    class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="flex-grow pl-6">
+                    <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Training, Testing & Prediction</h2>
+                    <p class="leading-relaxed text-base">The model is trained on a portion of historical data, where it learns to map input variables (risk factors) to the target variable (premium amount). It’s then tested on a separate dataset to ensure accuracy. When a new customer’s data is inputted, the model predicts the premium amount based on their profile. The predictor uses patterns it learned from the historical data to suggest a fair premium.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

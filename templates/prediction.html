@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}IPP - Prediction{% endblock title %}
+
+{% block body %}
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Insurance Premium Predictor</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">An insurance premium predictor is a model or tool
+                designed to forecast the premium (cost of insurance) for an individual or entity based on specific
+                variables or risk factors. Insurance companies often use predictive models to assess risk levels and set
+                premiums accordingly, aiming to price policies fairly and profitably.</p>
+            <br>
+            <b>
+            {% if pred %}
+                <h2 class="text-success">Insurance Prediction: {{pred}}</h2>
+            {% else %}
+                <h2>Please enter all the details</h2>
+            {% endif %}
+            </b>
+        </div>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+                <div class="relative flex-grow w-full">
+                    <label for="age" class="leading-7 text-sm text-black-900">Enter the age</label>
+                    <input type="text" id="age" name="age" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="relative flex-grow w-full">
+                    <label for="sex" class="leading-7 text-sm text-black-900">Enter the sex</label>
+                    <div class="mt-2">
+                        <select id="sex" name="sex" autocomplete="sex" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          <option>Select the option</option>
+                          <option value="1">Male</option>
+                          <option value="0">Female</option>
+                        </select>
+                      </div>
+                </div>
+            </div>
+
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+                <div class="relative flex-grow w-full">
+                    <label for="bmi" class="leading-7 text-sm text-black-900">Enter BMI</label>
+                    <input type="text" id="bmi" name="bmi" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="relative flex-grow w-full">
+                    <label for="children" class="leading-7 text-sm text-black-900">Enter number of children</label>
+                    <input type="text" id="children" name="children" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+            </div>
+
+
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+                <div class="relative flex-grow w-full">
+                    <label for="smoker" class="leading-7 text-sm text-black-900">Are you smoker?</label>
+                    <div class="mt-2">
+                        <select id="smoker" name="smoker" autocomplete="smoker" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          <option>Select the option</option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="relative flex-grow w-full">
+                    <label for="region" class="leading-7 text-sm text-black-900">Select your region</label>
+                    <div class="mt-2">
+                        <select id="region" name="region" autocomplete="region" class="w-full bg-white-100 rounded border border-black-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-350 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          <option>Select the option</option>
+                          <option value="1">South-West</option>
+                          <option value="2">South-East</option>
+                          <option value="3">North-West</option>
+                          <option value="4">North-East</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <button class="text-white bg-indigo-500 border-0 py-2 px-8 my-4 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock body %}
